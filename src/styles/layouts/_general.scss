@@ -1,0 +1,25 @@
+html,
+body {
+    @include size(100%);
+    position: relative;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+body {
+    scroll-behavior: smooth;
+    overflow: visible;
+
+    @media (prefers-reduced-motion: reduce) {
+        scroll-behavior: unset;
+    }
+    @media screen and (max-width: 544px) {
+        scroll-behavior: unset;
+    }
+}
+
+.app {
+    @include size(100%);
+    position: relative;
+    display: block;
+}

@@ -1,0 +1,113 @@
+// typographies
+$font-family-primary: 'Hind Guntur', sans-serif !default;
+$font-family-secondary: 'Sarala', sans-serif !default;
+
+$fontsizes: (
+    f1: rem-calc(60px),
+    f2: rem-calc(48px),
+    f3: rem-calc(36px),
+    f4: rem-calc(32px),
+    f5: rem-calc(24px),
+    f6: rem-calc(18px),
+    f7: rem-calc(16px),
+    f8: rem-calc(14px)
+) !default;
+@function size($key) {
+    @return map-get($fontsizes, $key);
+};
+
+
+$fontweight: (
+    regular : 400,
+    bold    : 700
+) !default;
+@function weight($key) {
+    @return map-get($fontweight, $key);
+}
+
+
+$lineheights: (
+    xl: 2.1,
+    lg: 1.9,
+    md: 1.6,
+    sm: 1.3,
+    xs: 1.1
+) !default;
+@function line($key) {
+    @return map-get($lineheights, $key);
+}
+
+// z-index
+$zindexes: (
+    negative  : -1,
+    default   : 0,
+    one       : 1000,
+    two       : 2000,
+    three     : 3000,
+    four      : 4000,
+    five      : 5000,
+    six       : 6000,
+    seven     : 7000,
+    eight     : 8000,
+    nine      : 9000,
+    full      : 9999
+) !default;
+@function index($key) {
+    @return map-get($zindexes, $key);
+}
+
+
+// colors
+$colors: (
+    primary         : #007EB3,
+    secondary       : #4DADE5,
+    tertiary        : #86DFFF,
+
+    background      : #EFF7FA,
+    border          : #EDEDED,
+
+    text_primary    : #454545,
+    text_secondary  : #818181,
+    text_tertiary   : #BCBCBC,
+
+    success         : #12C983,
+    error           : #EA8484,
+    warning         : #F0C03C,
+    info            : #1F82F5,
+
+    white           : #fff,
+    dark            : #000,
+
+    twitter         : #2aa3ef,
+    instagram       : #c43063
+) !default;
+@function color($key) {
+    @return map-get($colors, $key);
+}
+
+
+// configs
+$configs: (
+    container: 1200px,
+    transition: 225ms,
+    navigation: 100px,
+    radius: 5px,
+    offsettop: 7.5vh,
+    offsetleft: 4.2vw,
+
+    inputheight: 65px,
+    inputheightmobile: 55px,
+
+    buttonmin: 160px,
+    buttonminmobile: 120px,
+    buttonheight: 55px,
+    buttonheightmobile: 44px,
+
+    icons: 64px,
+    iconsmini: 48px,
+
+    tooltipheight: 40px
+) !default;
+@function config($key) {
+    @return map-get($configs, $key);
+}

@@ -1,0 +1,28 @@
+@mixin tooltip ($top, $left, $color) {
+    @include size(auto, config(tooltipheight));
+    display: block;
+    padding: 0 20px;
+
+    position: absolute;
+    top: $top; left: $left;
+
+    border-radius: config(radius);
+    background-color: color(white);
+
+    color: $color;
+    font: {
+        size: size(f8);
+        weight: weight(bold);
+    }
+
+    text-align: center;
+    line-height: config(tooltipheight);
+
+    @include shadow();
+    content: attr(aria-label);
+
+    pointer-events: none;
+    opacity: 0;
+
+    @include transition(all, config(transition), ease-in-out);
+}

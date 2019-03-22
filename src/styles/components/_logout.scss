@@ -1,0 +1,53 @@
+.app-logout {
+    @include size(config(icons));
+    min-width: unset;
+    display: block;
+    padding: 0;
+
+    position: absolute;
+    top: config(offsettop);
+    left: config(offsetleft);
+    z-index: index(one);
+
+    @include shadow();
+    border-radius: 50%;
+    background-color: white;
+
+    &::after {
+        @include size(100px, 30px);
+        display: block;
+        padding: 0 10px;
+
+        position: absolute;
+        bottom: -30px;
+        left: -15px;
+
+        border-radius: config(radius);
+        background-color: color(error);
+
+        color: white;
+        font-size: size(f8);
+        line-height: 30px;
+
+        @include shadow();
+        content: attr(aria-label);
+
+        pointer-events: none;
+        opacity: 0;
+
+        @include transition(all, config(transition), ease-in-out);
+    }
+
+    &:hover {
+        &::after {
+            bottom: -40px;
+            opacity: 1;
+        }
+    }
+
+    @include maxquery(lg) {
+        @include size(50px);
+        top: 2.5vh;
+        background-size: 20px auto;
+    }
+}

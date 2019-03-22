@@ -1,0 +1,11 @@
+.tt-main {
+    @include size(calc(100% - #{config(navigation)}), 100%);
+    position: relative;
+
+    display: block;
+    margin-left: config(navigation);
+    padding: 50px 75px;
+
+    background-color: color(background);
+    z-index: index(default);
+}

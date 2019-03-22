@@ -1,0 +1,106 @@
+.tt-button {
+    min-width: config(buttonmin);
+    height: config(buttonheight);
+
+    display: inline-block;
+    vertical-align: middle;
+
+    margin: 0;
+    padding: 0 2.8125em;
+
+    border: 0;
+    border-radius: 5px;
+    background: transparent;
+
+    color: white;
+    font: {
+        size: size(f7);
+        weight: weight(regular);
+    }
+    text: {
+        align: center;
+        decoration: none;
+    }
+    letter-spacing: 1px;
+
+    transition: all config(transition) ease-in-out;
+    will-change: auto;
+
+    appearance: none;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: color(text_tertiary) !important;
+        box-shadow: none !important;
+
+        transform: unset;
+        transition: unset;
+
+        pointer-events: none;
+        cursor: default;
+
+        &:hover {
+            background-color: color(text_tertiary) !important;
+            box-shadow: none !important;
+
+            transform: unset;
+            transition: unset;
+
+            cursor: default;
+        }
+    }
+
+    &[tt-button="primary"] {
+        background-color: color(primary);
+    }
+    &[tt-button="secondary"] {
+        background-color: color(secondary);
+    }
+    &[tt-button="tertiary"] {
+        background-color: color(tertiary);
+    }
+    &[tt-button="success"] {
+        background-color: color(success);
+    }
+    &[tt-button="error"] {
+        background-color: color(error);
+    }
+    &[tt-button="warning"] {
+        background-color: color(warning);
+    }
+    &[tt-button="info"] {
+        background-color: color(info);
+    }
+    &[tt-button="light"] {
+        background-color: color(white);
+        color: color(text_primary);
+    }
+    &[tt-button="dark"] {
+        background-color: color(dark);
+    }
+    &[tt-button="solid"] {
+        background-color: transparent;
+    }
+}
+
+@include minquery(lg) {
+    .tt-button {
+        &:focus { outline: none; }
+
+        &.animated {
+            transform: scale(1);
+    
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0 10px 30px 0 rgba(black, .15);
+            }
+        }
+    }
+}
+
+@include maxquery(lg) {
+    .tt-button {
+        min-width: config(buttonminmobile);
+        height: config(buttonheightmobile);
+    }
+}

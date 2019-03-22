@@ -1,0 +1,168 @@
+.app-login {
+    @include size(100%);
+    position: relative;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    align: {
+        content: stretch;
+        items: stretch;
+    }
+
+    &--form,
+    &--slider,
+    &--banner {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        align: {
+            content: center;
+            items: center;
+        }
+    }
+
+    &--form {
+        flex: 0 0 42.8vw;
+        max-width: 42.8vw;
+        padding: 0 config(offsetleft);
+
+        h2, p {
+            width: 100%;
+            display: block;
+            margin: 0;
+            line-height: line(xs);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: color(text_secondary);
+            font: {
+                size: size(f4);
+                weight: weight(bold);
+            }
+        }
+
+        p {
+            margin-bottom: 70px;
+            color: color(text_tertiary);
+            font-size: size(f6);
+        }
+
+        form {
+            @include size(100%, auto);
+            position: relative;
+
+            display: flex;
+            flex-flow: row wrap;
+
+            align: {
+                content: center;
+                items: center;
+            }
+        }
+
+        label {
+            @include size(100%, auto);
+            position: relative;
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        .tt-checkbox {
+            width: 100%;
+        }
+
+        .submit-button,
+        .register-button {
+            margin-top: 18px;
+            margin-left: auto;
+        }
+
+        .register-button {
+            margin-top: 50px;
+        }
+
+        .non-account,
+        .forgot-pass,
+        .strong-pass,
+        .allready-account {
+            margin-top: 20px;
+            align-self: center;
+            
+            font: {
+                size: size(f7);
+                weight: weight(regular);
+            }
+
+            &:hover { text-decoration: none; }
+        }
+
+        .non-account {
+            color: color(primary);
+            margin-right: 30px;
+        }
+
+        .forgot-pass,
+        .allready-account {
+            color: color(text_secondary);
+        }
+
+        .strong-pass {
+            color: color(primary);
+            margin-left: auto;
+        }
+
+        .allready-account { margin-top: 50px; }
+
+        .password-viewer {
+            @include size(config(buttonheight));
+            display: block;
+
+            position: absolute;
+            top: 5px; right: 5px;
+            cursor: pointer;
+
+            svg {
+                @include size(24px, 15px);
+                @include center-both;
+                pointer-events: none;
+                fill: color(text_secondary);
+                @include transition(fill, config(transition), ease-in-out);
+            }
+
+            &.is-password-active {
+                svg { fill: color(secondary); }
+            }
+        }
+    }
+
+    &--slider,
+    &--banner {
+        flex: 0 0 57.2vw;
+        max-width: 57.2vw;
+    }
+}
+
+@include maxquery(md) {
+    .app-login {
+        &--form {
+            flex: 0 0 100%;
+            max-width: 100%;
+
+            align: {
+                content: center;
+                items: center;
+            }
+
+            justify-content: center;
+
+            h2 { margin-top: 0; }
+
+            h2, p, form {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    }
+}

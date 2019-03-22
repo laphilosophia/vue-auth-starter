@@ -1,0 +1,9 @@
+.app-login--banner {
+    background-color: color(background);
+
+    img {
+        @include center-both;
+        max-width: 80%;
+        pointer-events: none;
+    }
+}
